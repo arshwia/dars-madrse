@@ -27,18 +27,23 @@ def calculate_average(scores):
 
 
 def show_report():
-    code = int(input("لطفا کد دانش آموزی را وارد نمائید:"))
+    code = int(input("لطفا کد دانش آموزی را وارد نمایید:"))
 
     if code not in students:
         print("دانش آموز یافت نشد")
         return
+
     student = students[code]
     average = calculate_average(student["scores"])
 
-    print("\n --------کارنامه دانش آموز--------")
+    print("")
     print("نام:", student["name"])
     print("نمرات", student["scores"])
     print("میانگین", round(average, 2))
+
+    print(
+        f"\n\n ----------کارنامه دانش آموز----------\nنام: {student['name']}\nنمرات: {student['scores']}\nمیانگین: {round(average,)}"
+    )
 
     if average >= 10:
         print("وضعیت:قبول")
